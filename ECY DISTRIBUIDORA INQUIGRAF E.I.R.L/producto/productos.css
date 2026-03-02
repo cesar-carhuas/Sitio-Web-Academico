@@ -1,0 +1,482 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* CABEZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+header{
+    display: flex;
+    float: left;
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: space-between;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+}
+
+.logo img{
+    height: 100px;
+    width: 30rem;
+    background-size: cover;
+    display: flex;
+}
+
+nav a{
+    font-size: 15px;
+    font-weight: 800;
+    padding-right: 10px;
+    background-color: purple;
+    color: #fff;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+nav a:hover{
+    color: black;
+    background-color: darkorchid;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.checkbtn img{
+    width: 50px;
+    position: absolute;
+    right: 0;
+    bottom: 45px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+
+@media (max-width:1080px){
+    .logo img{
+        height: 100px;
+        width: 30rem;
+        margin-right: 400px;
+
+    }
+
+    .checkbtn img{
+        display: block;
+        top: 30px;
+    }
+
+    .checkbtn img{
+        display: block;
+    }
+    nav{
+        position: fixed;
+        height: 100vh;
+        background-color: purple;
+        top: 105px;
+        left: -100%;
+        text-align: center;
+        width: 100%;
+        transition: all .5s;
+    }
+
+    nav a{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+        background-color: purple;
+        font-size: 25px;
+    }
+
+    nav a:hover{
+        border-radius: 0;
+    }
+
+    #check:checked ~ nav{
+        left: 0;
+    }
+}
+
+@media (max-width:600px){
+    .logo img{
+        height: 100px;
+        width: 20rem;
+        margin-right: 400px;
+    }
+
+    .checkbtn img{
+        display: block;
+    }
+    nav{
+        position: fixed;
+        height: 100vh;
+        background-color: purple;
+        top: 120px;
+        left: -100%;
+        text-align: center;
+        width: 100%;
+        transition: all .5s;
+    }
+
+    nav a{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+        background-color: purple;
+        font-size: 25px;
+    }
+
+    nav a:hover{
+        border-radius: 0;
+    }
+
+    #check:checked ~ nav{
+        left: 0;
+    }
+}
+
+/* TITULOOOOO */
+
+main h1{
+    background-image: url(/producto/imagenes/fondomorado.avif);
+    color: black;
+    padding: 200px;
+    height: 20px;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    background-size: cover;
+}
+
+@media (max-width: 950px) {
+    main h1{
+        padding-top: 200px;
+        font-size: 30px;
+        display: flex;
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 870px) {
+    main h1{
+        padding-top: 300px;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        font-size: 40px;
+    }
+}
+
+
+/* FILTROOOOOOOOO DISEÑO */
+
+.contenedor{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.categoria{
+    width: 100%;
+    margin: 40px auto;
+    display: flexbox;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.categoria label{
+    flex: 0 0 calc(33.33% - 40px);
+    padding: 10px 40px;
+    margin: 10px;
+    font-size: 20px;
+    background-color: red;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+    border: #000 5px solid;
+    transition: all 0.3s;
+}
+
+/* .categoria label:hover{
+    background-color: black;
+    margin: 10px;
+    padding: 10px 40px;
+    color: yellow;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+    border: 4px red solid;
+} */
+
+@media (max-width: 1100px) {
+    .categoria {
+        display: flex;
+        width: auto;
+        margin: auto;
+    }
+
+    .categoria label {
+        font-size: 20px; /* Reducimos el tamaño de fuente en pantallas pequeñas */
+    }
+}
+
+/* FILTROOOOO */
+
+#categoriaA:checked ~ #imagenes .categoriaB, #categoriaA:checked ~ #imagenes .categoriaC {
+    display: none;
+}
+
+#imagenes .categoriaA{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#categoriaB:checked ~ #imagenes .categoriaA, #categoriaB:checked ~ #imagenes .categoriaC {
+    display: none;
+}
+
+#imagenes .categoriaB{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#categoriaC:checked ~ #imagenes .categoriaA, #categoriaC:checked ~ #imagenes .categoriaB {
+    display: none;
+}
+
+#imagenes .categoriaC{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+/* FILTRO DISEÑO IMAGENES */
+
+#imagenes{
+    display: flexbox;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#imagenes img{
+    max-width: 100%;
+    height: auto;
+    border: 5px solid black;
+    margin: 15px;
+}
+
+/* PRODUCTO */
+
+.Producto{
+    background-image: url(/imagenes.INDEX/fondoProducto.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.producto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: calc(33.33% - 40px);
+    max-width: 300px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.producto h2{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 5px;
+    border: 5px black solid;
+    border-radius: 10px;
+    background-color: purple;
+    margin: 10px;
+    font-size: 1.5em;
+    text-align: center;
+    color: #fff;
+}
+
+.producto p{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: blue;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    border-radius: 20px;
+    width: 100%;
+    border: black 5px solid;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.precio, .nombre{
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .producto {
+        max-width: 100%; /* Cambiamos el máximo de ancho para ocupar todo el ancho en pantallas pequeñas */
+        margin: 20px;
+        flex-direction: column;
+    }
+
+    .producto h2{
+        font-size: 0.8rem;
+    }
+
+    #imagenes img {
+        height: 150px; /* Reducimos la altura de las imágenes en pantallas pequeñas */
+    }
+}
+
+
+/* PROMOCIONESSSSSSSSSSSSS */
+
+.promociones{
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url(/imagenes.INDEX/fondopromociones.jpg);
+    background-size: cover;
+    font-size: 3vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: yellow;
+    
+}
+
+.promociones p{
+    max-width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .promociones {
+      font-size: 5vw; /* Cambiar el tamaño de fuente en pantallas pequeñas */
+    }
+}
+
+
+/* PIE DE PAGINA */
+
+.footer{
+    font-size: 20px;
+    background-image: url(/imagenes.INDEX/pie.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 80px 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-row{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.footer-link{
+    width: 25%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.footer-link h2{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid #00c3ff;
+    display: inline-block;
+    padding-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.footer-link ul li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+.footer-link ul li a:hover{
+    color: #fff;
+    padding-left: 6px;
+}
+
+.footer-link ul li{
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.footer-link img{
+    width: 50px;
+    margin: 0 20px;
+    
+}
+
+.visitanos:hover{
+    transform: scale(1.1);
+}
+
+@media(max-width:900px) {
+    .footer-row{
+        text-align: center;
+    }
+    .footer-link{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
